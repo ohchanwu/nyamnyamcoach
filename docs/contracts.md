@@ -1,4 +1,6 @@
-# Shared Contracts (공유 계약)
+# Shared Contracts
+
+> Korean version: [`contracts.ko.md`](contracts.ko.md)
 
 The two integration points where member-management (me) and community (partner) meet.
 **Agree on these signatures first**, then both sides code in parallel against them — the community side uses stubs/fakes until the real implementations land. Owner: member-management (`feat/login`).
@@ -28,7 +30,6 @@ public String getName();
 ```
 
 **Until login is ready:** the community side tests with a fake user (e.g. `"테스트유저"`) and swaps in `Session.getCurrentUser()` at the end.
-커뮤니티 담당은 로그인 완성 전까지 가짜 사용자로 테스트하고, 마지막에 `Session.getCurrentUser()` 로 교체한다.
 
 ---
 
@@ -57,7 +58,6 @@ public class FileUtil {
 Backed by **GSON 2.11.0** (already in `lib/`).
 
 **Until these land:** the community side stubs them with the same signatures so nothing is blocked.
-커뮤니티 담당은 같은 시그니처로 임시 스텁을 두고 진행한다.
 
 ---
 
@@ -74,4 +74,3 @@ public class CommunityMenu {
 ```
 
 This is the only step that truly waits on member-management.
-이 연결만 회원 관리 완료 후 진행하면 된다.
