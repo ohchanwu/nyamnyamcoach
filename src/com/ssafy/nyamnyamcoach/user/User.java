@@ -1,12 +1,12 @@
-package com.ssafy.nyamnyamcoach.domain;
+package com.ssafy.nyamnyamcoach.user;
 
 import java.util.*;
 import java.time.*;
 
-class User {
-	private String id;
-	public String getId() { return id; }
-	public void setId(String id) { this.id = id; }
+public class User {
+	private int id;
+	public int getId() { return id; }
+	public void setId(int id) { this.id = id; }
 
 	private String name;
 	public String getName() { return name; }
@@ -18,7 +18,9 @@ class User {
 	
 	private int height;
 	public int getHeight() { return height; }
-	public void setHeight(int height) { this.height = height; }
+	public void setHeight(int height) { 
+		this.height = height; 
+	}
 	
 	private int weight;
 	public int getWeight() { return weight; }
@@ -32,11 +34,13 @@ class User {
 	public String getStatus() { return status; }
 	public void setStatus(String status) { this.status = status; }
 	
-	private String followingIds;
-	public String getFollowingIds() { return followingIds; }
-	public void setFollowingIds(String followingIds) { this.followingIds = followingIds; }
+	private List<Integer> followingIds;
+	public List<Integer> getFollowingIds() { return followingIds; }
+	public void setFollowingIds(List<Integer> followingIds) { this.followingIds = followingIds; }
 	
-	private String createdAt;
-	public String getCreatedAt() { return createdAt; }
-	public void setCreatedAt(String createdAt) { this.createdAt = createdAt; }
+	// using the non-timezone-aware LocalDateTime
+	// because all users will be based in Korea
+	private LocalDateTime createdAt;
+	public LocalDateTime getCreatedAt() { return createdAt; }
+	public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 }
