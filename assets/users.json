@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": "chulsoo",
+      "name": "김철수",
+      "password": "pw1234",
+      "height": 175,
+      "weight": 70,
+      "diseases": [],
+      "status": "ACTIVE",
+      "followingIds": "younghee,jimin",
+      "createdAt": "2026-07-15T09:30:00"
+    },
+    {
+      "id": "younghee",
+      "name": "이영희",
+      "password": "pw1234",
+      "height": 162,
+      "weight": 55,
+      "diseases": ["당뇨"],
+      "status": "ACTIVE",
+      "followingIds": "chulsoo",
+      "createdAt": "2026-07-16T14:05:00"
+    },
+    {
+      "id": "jimin",
+      "name": "박지민",
+      "password": "pw1234",
+      "height": 180,
+      "weight": 78,
+      "diseases": [],
+      "status": "ACTIVE",
+      "followingIds": "",
+      "createdAt": "2026-07-18T20:12:00"
+    },
+    {
+      "id": "minsoo",
+      "name": "최민수",
+      "password": "pw1234",
+      "height": 168,
+      "weight": 63,
+      "diseases": ["고혈압"],
+      "status": "INACTIVE",
+      "followingIds": "",
+      "createdAt": "2026-07-20T11:47:00"
+    },
+    {
+      "id": "admin",
+      "name": "관리자",
+      "password": "admin1234",
+      "height": 170,
+      "weight": 65,
+      "diseases": [],
+      "status": "ACTIVE",
+      "followingIds": "chulsoo,younghee,jimin",
+      "createdAt": "2026-07-01T00:00:00"
+    }
+  ]
+}
