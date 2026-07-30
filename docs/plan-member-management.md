@@ -49,3 +49,12 @@ Persist to `assets/users.json` (spec: write the member JSON yourself — no seed
 - Expose **`Session.getCurrentUser()`** (name + id) so community posts/comments can stamp the author.
 - **`Main` root menu** delegates to your partner's `CommunityMenu` once logged in — agree on that single entry-point method signature.
 - Agree with your partner that **`JsonUtil`/`FileUtil` are yours**; they reuse them (don't duplicate) to avoid merge conflicts.
+
+## Shared contracts (agree on these first so your partner isn't blocked)
+
+Your partner can build the entire community feature in parallel against stubs — they are **not** waiting on your finished code. Lock down these two contracts up front and only the final wiring waits on you:
+
+1. **Current user** — `Session.getCurrentUser()` returns a user exposing at least `getName()` / `getId()`. Partner codes against this and uses a fake user until it's real.
+2. **`JsonUtil` / `FileUtil` signatures** — settle the method shapes early (e.g. `JsonUtil.fromJsonList(...)`, `JsonUtil.toJson(...)`, `FileUtil.read/write`). Partner stubs them until you land the real ones.
+
+Land `JsonUtil`/`FileUtil` and `Session` early; the only true integration step is hooking `CommunityMenu` into the root menu and swapping the fake user for the real `Session`.
